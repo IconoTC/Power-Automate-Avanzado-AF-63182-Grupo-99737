@@ -1,0 +1,69 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "https://adaptivecards.io/content/checkmark-green.png",
+              "size": "Small"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "verticalContentAlignment": "Center",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Gasto aprobado",
+              "weight": "Bolder",
+              "size": "Large",
+              "color": "Good"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "Tu solicitud de gasto ha sido aprobada.",
+      "wrap": true,
+      "spacing": "Medium"
+    },
+    {
+      "type": "FactSet",
+      "facts": [
+        { "title": "Solicitante:", "value": "${solicitante}" },
+        { "title": "Concepto:", "value": "${concepto}" },
+        { "title": "Importe:", "value": "${importe} €" },
+        { "title": "Fecha del gasto:", "value": "${fecha}" },
+        { "title": "Aprobado por:", "value": "${aprobador}" },
+        { "title": "Fecha de aprobación:", "value": "${fechaAprobacion}" }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "El reembolso se procesará según el ciclo habitual de pagos.",
+      "wrap": true,
+      "isSubtle": true,
+      "size": "Small",
+      "spacing": "Medium"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "title": "Ver detalle del gasto",
+      "url": "${urlDetalle}"
+    }
+  ]
+}
